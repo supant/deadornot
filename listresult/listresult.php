@@ -3,14 +3,14 @@ require_once ("./../_resources/appelAllClasses.php");
 session_start();
 
  
-$tableauRecent= [['name'=>"Les + populaires"],['name'=>"Madonna"],['name'=>"Corbier"],['name'=>"Jean Rochefort"],['name'=>"Jennifer Aniston"]];
+$tableauResult= [];
 
-$pageTitle = MENU_TITRE;
-$file = "./../menu/menu.html";
+$pageTitle = LISTRESULT_TITRE;
+$file = "./../listresult/listresultmenu.html";
 $pageNum = 1;
 $tbs = new clsTinyButStrong;
 $tbs -> LoadTemplate("./../_template/template.htm");
-$tbs -> MergeBlock("tableauRecent", $tableauRecent);
+$tbs -> MergeBlock("tableauResult", $tableauResult);
 $tbs -> show();
 
 //https://templated.co/items/demos/binary/elements.html

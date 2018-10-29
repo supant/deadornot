@@ -23,6 +23,7 @@ define('ROOT',"/EclipsePhpWorkSpace/deadornot/"); //Antoine
 //define('ROOT',"/"); //production
 //define('PAGE_SITE_ROOT', "https://shotgun.ecam.fr/");
 define('PAGE_MENU',ROOT."menu/menu.php");
+define('PAGE_LISTRESULT',ROOT."listresult/listresult.php");
 
 define('COLOR_AVAILABLE', "#adadad");
 define('COLOR_SELECTED', "#19c424");
