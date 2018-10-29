@@ -1,0 +1,47 @@
+<!-- Tableau participation -->
+<div>
+
+	<div>
+		<input type="text" id="champrecherche" value="" placeholder="Name" />
+	</div>
+	
+	<div >
+	<input type="button" value="Reset" id=buttonRepondre />
+	</div>
+	
+
+<div class="table-wrapper">
+	<table class="alt">
+		<tr>
+		<td> [tableauRecent.a;block=tr]</td>
+		</tr>
+	</table>
+</div>
+				
+</div>
+
+
+<!-- Creation des actions sur les boutons : appel à la page ajax avec les data -paramètres-->
+<script type="text/javascript">
+	var settings = {
+		'page' : '[onshow..script_name]',
+		'codeError' : '[onshow..cst.RETOUR_ERREUR]',
+		'codeAlert' : '[onshow..cst.RETOUR_ALERT]',
+		'pageError' : '[onshow..cst.PAGE_ERREUR]'
+	};
+	$(function() {
+		Util.init(JSON.stringify(settings));
+
+		///Boutons INVITES
+		$('#buttonRepondre').click(function() {
+			alert("clic");
+			var data = {
+				'action' : "[onshow..cst.MENU_BOUTON_RECHERCHER_VALUE]",
+				'champrecherche' : $(this).attr('champrecherche'),
+			};
+			Util.ajaxCall(data);
+		});
+
+	
+	}); 
+</script>
