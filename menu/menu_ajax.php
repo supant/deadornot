@@ -4,10 +4,11 @@ session_start();
 
 
 if ($_POST['action'] == MENU_BOUTON_RECHERCHER_VALUE) {
-    if (!isset($_POST['champrecherche']) || empty($_POST['champrecherche'])) {
+    if (!isset($_POST['champrecherche']) || empty($_POST['champrecherche']) || $_POST['champrecherche'][0]!='x' ) {
             echo(json_encode(array(RETOUR_OK, PAGE_MENU)));
-            $_SESSION['champrecherche']=$_POST['champrecherche'];
         } else {
+            
+            $_SESSION['champrecherche']=substr($_POST['champrecherche'],1,strlen($_POST['champrecherche'])-1);
             echo(json_encode(array(RETOUR_OK, PAGE_LISTRESULT)));
         }
    }

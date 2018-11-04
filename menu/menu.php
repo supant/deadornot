@@ -13,7 +13,6 @@ $tbs -> LoadTemplate("./../_template/template.htm");
 $tbs -> MergeBlock("tableauRecent", $tableauRecent);
 $tbs -> show();
 
-//https://templated.co/items/demos/binary/elements.html
 
 
 

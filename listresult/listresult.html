@@ -4,22 +4,22 @@
 
 <div class="12u$">
 	<ul class="actions">
-		<li><input type="text" id="champrecherche" placeholder="[onload..cst.MENU_BOUTON_RECHERCHER_TXT]" /></li>
-		<li><input type="button" value="[onshow..cst.MENU_BOUTON_RECHERCHER_TXT]" id=buttonRepondre /></li>
+		<li><input type="text" id="champrecherche" value="[onshow.requestTxt]" placeholder="[onload..cst.LISTRESULT_SEARCH_HOLDER_TXT]" /></li>
+		<li><input type="button" value="[onshow..cst.LISTRESULT_BOUTON_RECHERCHER_TXT]" id=buttonRepondre /></li>
 	</ul>
 </div>
 
 <div class="table-wrapper">
 	<table class="alt">
 		<tr>
-		<td> [tableauResult.name;block=tr]</td>
+		<td id="[tableauResult.pageid;block=tr]"> [tableauResult.title]</td>
 		</tr>
 	</table>
 </div>
 		
 <div class="12u$">
 	<ul class="actions">
-		<li><input type="button" value="[onshow..cst.MENU_BOUTON_RANDOM_TXT]" id=buttonRandom /></li>
+		<li><input type="button" value="[onshow..cst.LISTRESULT_BOUTON_BACK_TXT]" id=buttonBack /></li>
 	</ul>
 </div>
 		
@@ -27,7 +27,6 @@
 </div>
 
 
-<!-- Creation des actions sur les boutons : appel à la page ajax avec les data -paramètres-->
 <script type="text/javascript">
 	var settings = {
 		'page' : '[onshow..script_name]',
@@ -37,22 +36,30 @@
 	};
 	$(function() {
 		Util.init(JSON.stringify(settings));
-		
-		///Boutons INVITES
 		$('#buttonRepondre').click(function() {
 			var data = {
-				'action' : "[onshow..cst.MENU_BOUTON_RECHERCHER_VALUE]",
+				'action' : "[onshow..cst.LISTRESULT_BOUTON_RECHERCHER_VALUE]",
 				'champrecherche' : $('#champrecherche').val(),
 			};
 			Util.ajaxCall(data);
 		});
-		$('#buttonRandom').click(function() {
+		$('#buttonBack').click(function() {
 			var data = {
-				'action' : "[onshow..cst.MENU_BOUTON_RANDOM_VALUE]",
+				'action' : "[onshow..cst.LISTRESULT_BOUTON_BACK_VALUE]",
 			};
 			Util.ajaxCall(data);
-		});
-
-	
+		});	
 	}); 
+	$('table').on('click', 'tr', function () {
+		  var valueId = $(this).find('td:first').attr('id');
+		  var valueTxt = $(this).find('td:first').text();
+		  var data = {
+					'action' : "[onshow..cst.LISTRESULT_BOUTON_PERSONNE_VALUE]",
+					'idrecherche': valueId,
+					'champrecherche' : $('#champrecherche').val(),
+					'txtrecherche' : valueTxt
+		  };
+		 Util.ajaxCall(data);
+	});
+	
 </script>
