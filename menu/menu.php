@@ -3,7 +3,7 @@ require_once ("./../_resources/appelAllClasses.php");
 session_start();
 
  
-$tableauRecent= [['name'=>"Les + populaires"],['name'=>"Madonna"],['name'=>"Corbier"],['name'=>"Jean Rochefort"],['name'=>"Jennifer Aniston"]];
+$tableauRecent= [['name'=>"Madonna"],['name'=>"Corbier"],['name'=>"Jean Rochefort"],['name'=>"Jennifer Aniston"]];
 
 $pageTitle = MENU_TITRE;
 $file = "./../menu/menu.html";

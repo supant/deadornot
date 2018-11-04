@@ -18,8 +18,8 @@ define('DATE_MYSQL_DATE',"Y-m-d");
 define('DATE_HTML_T',"Y-m-d\TH:i");
 define('DATE_HTML_T_SEC',"Y-m-d\TH:i:s");
 
-//define('ROOT',"/aptanaCreneaux/creneaux/creneaux/");
-define('ROOT',"/EclipsePhpWorkSpace/deadornot/"); //Antoine
+//define('ROOT',"/EclipsePhpWorkSpace/deadornot/"); //Antoine boulot
+define('ROOT',"/WorkspaceEclipsePhp/deadornot/"); //Antoine maison
 //define('ROOT',"/"); //production
 //define('PAGE_SITE_ROOT', "https://shotgun.ecam.fr/");
 define('PAGE_MENU',ROOT."menu/menu.php");
