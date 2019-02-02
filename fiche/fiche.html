@@ -4,8 +4,8 @@
 
 <div class="12u$">
 	<ul class="actions">
-		<li><input type="text" id="champrecherche" value="[onshow.requestTxt]" placeholder="[onload..cst.AFFICHEPERSONNE_SEARCH_HOLDER_TXT]" /></li>
-		<li><input type="button" value="[onshow..cst.AFFICHEPERSONNE_BOUTON_RECHERCHER_TXT]" id=buttonRepondre /></li>
+		<li><input type="text" id="champrecherche" value="[onshow.requestTxt]" placeholder="[onload..cst.ALL_SEARCH_HOLDER_TXT]" /></li>
+		<li><input type="button" value="[onshow..cst.ALL_BOUTON_RECHERCHER_TXT]" id=buttonRepondre /></li>
 	</ul>
 </div>
 
@@ -27,7 +27,7 @@
 		
 <div class="12u$">
 	<ul class="actions">
-		<li><input type="button" value="[onshow..cst.AFFICHEPERSONNE_BOUTON_BACK_TXT]" id=buttonBack /></li>
+		<li><input type="button" value="[onshow..cst.FICHE_BOUTON_BACK_TXT]" id=buttonBack /></li>
 	</ul>
 </div>
 		
@@ -46,14 +46,14 @@
 		Util.init(JSON.stringify(settings));
 		$('#buttonRepondre').click(function() {
 			var data = {
-				'action' : "[onshow..cst.AFFICHEPERSONNE_BOUTON_RECHERCHER_VALUE]",
+				'action' : "[onshow..cst.ALL_BOUTON_RECHERCHER_VALUE]",
 				'champrecherche' : $('#champrecherche').val(),
 			};
 			Util.ajaxCall(data);
 		});
 		$('#buttonBack').click(function() {
 			var data = {
-				'action' : "[onshow..cst.AFFICHEPERSONNE_BOUTON_BACK_VALUE]",
+				'action' : "[onshow..cst.FICHE_BOUTON_BACK_VALUE]",
 			};
 			Util.ajaxCall(data);
 		});	
