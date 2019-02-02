@@ -15,6 +15,7 @@ require_once("requetes.php");
 require_once("gestionimage.php");
 //Util
 require_once("util.php");
+require_once("webAPI.php");
 require_once("parserWiki.php");
 
 

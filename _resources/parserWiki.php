@@ -1,8 +1,9 @@
 <?php
-function parseWiki($idPage,$nom,$pageTxt) {
+function parseWiki($idPage,$nom,$requeteOri,$pageTxt) {
     $pResult=new Personne();
     $pResult->setIdPage($idPage);
     $pResult->setNom($nom);
+    $pResult->setRechercheOri($requeteOri);
     if (strlen($pageTxt)<1) {
         $pResult->setErreur("erreur : y'a rien à parser");
         return $pResult;

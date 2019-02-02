@@ -3,7 +3,7 @@ require_once ("./../_resources/appelAllClasses.php");
 session_start();
 
 
-if ($_POST['action'] == ALL_RECHERCHER_VALUE) {
+if ($_POST['action'] == MENU_BOUTON_RECHERCHER_VALUE) {
     if (!isset($_POST['champrecherche']) || empty($_POST['champrecherche']) || $_POST['champrecherche'][0]!='x' ) {
             echo(json_encode(array(RETOUR_OK, PAGE_MENU)));
         } else {

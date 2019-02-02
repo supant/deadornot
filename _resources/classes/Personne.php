@@ -4,6 +4,7 @@ class Personne {
 	private static $_instance = null;
 	private $idPage;
 	private $nom;
+	private $rechercheOri;
 	private $dateNaissance;
 	private $lieuNaissance;
 	private $dateDeces;
@@ -40,6 +41,13 @@ class Personne {
 	public function setNom($nom) {
 	    $this -> nom = $nom;
 	}
+	public function getRechercheOri() {
+	    return $this -> nom;
+	}
+	public function setRechercheOri($rechercheOri) {
+	    $this -> rechercheOri = $rechercheOri;
+	}
+	
 	
 	public function getDateNaissance() {
 	    return $this -> dateNaissance;
@@ -97,10 +105,15 @@ class Personne {
 	    $this -> erreur = $erreur;
 	}
 	
+	public function isValide() {
+	    if (strlen($this->erreur)<1) return true; else return false;
+	}
+	
 	public function getArray() {
 	    $tab=array();
 	    $tab['idPage']=$this->idPage;
 	    $tab['nom']=$this->nom;
+	    $tab['rechercheOri']=$this->rechercheOri;	    
 	    $tab['dateNaissance']=$this->dateNaissance;
 	    $tab['lieuNaissance']=$this->lieuNaissance;
 	    $tab['dateDeces']=$this->dateDeces;
@@ -109,7 +122,6 @@ class Personne {
 	    $tab['age']=$this->age;
 	    $tab['isMort']=$this->isMort;
 	    $tab['erreur']=$this->erreur;
-	    
 	    return $tab;
 	    
 	}
