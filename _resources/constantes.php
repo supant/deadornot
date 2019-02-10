@@ -20,7 +20,7 @@ define('DATE_HTML_T_SEC',"Y-m-d\TH:i:s");
 
 
 //define('ROOT',"/EclipsePhpWorkSpace/deadornot/"); //Antoine boulot
-//define('ROOT',"/WorkspaceEclipsePhp/deadornot/"); //Antoine maison
+define('ROOT',"/WorkspaceEclipsePhp/deadornot/"); //Antoine maison
 //define('ROOT',"/deadornot/"); //Arthur
 //define('ROOT',"/"); //production
 //define('PAGE_SITE_ROOT', "https://shotgun.ecam.fr/");
@@ -28,6 +28,8 @@ define('PAGE_MENU',ROOT."menu/menu.php");
 define('PAGE_LISTRESULT',ROOT."listresult/listresult.php");
 define('PAGE_FICHE',ROOT."fiche/fiche.php");
 define('PAGE_QUIZ',ROOT."quiz/quiz.php");
+define('PAGE_NOINFO',ROOT."noinfo/noinfo.php");
+
 
 
 define('COLOR_AVAILABLE', "#adadad");

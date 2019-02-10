@@ -23,14 +23,15 @@ if ($_POST['action'] == LISTRESULT_BOUTON_PERSONNE_VALUE) {
         else $txtrechercheTmp=$_POST['txtrecherche'];
         
         $Personne=chercherPersonneFromID($idrechercheTmp,$txtrechercheTmp,$champrechercheTmp);
-        if ($Personne->isValide()==true) 
+        $_SESSION['personne']=$Personne;
+        if ($Personne->isValide()==1) 
             echo(json_encode(array(RETOUR_OK, PAGE_QUIZ)));
         else echo(json_encode(array(RETOUR_OK, PAGE_NOINFO)));
         
     }
 }
 
-if ($_POST['action'] == LISTRESULT_BOUTON_BACK_VALUE) {
+if ($_POST['action'] == ALL_BACK_VALUE) {
         echo(json_encode(array(RETOUR_OK, PAGE_MENU)));
       
 }

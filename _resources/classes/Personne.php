@@ -13,6 +13,7 @@ class Personne {
 	private $age;
 	private $isMort;
 	private $erreur;
+	private $valide;
 	
 
 	// Construction ***************************************
@@ -106,8 +107,12 @@ class Personne {
 	}
 	
 	public function isValide() {
-	    if (strlen($this->erreur)<1) return true; else return false;
+	    return $this -> valide;
 	}
+	public function setValide($valide) {
+	    $this -> valide = $valide;
+	}
+	
 	
 	public function getArray() {
 	    $tab=array();

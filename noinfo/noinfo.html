@@ -1,6 +1,4 @@
 <!-- Tableau participation -->
-<div class="inner">
-
 
 
 <div class="table-wrapper">
@@ -15,16 +13,13 @@
 		</tbody>
 	</table>
 </div>
-				
+		
 <div class="12u$">
 	<ul class="actions">
 		<li><input type="button" value="[onshow..cst.ALL_BACK_TXT]" id=buttonBack /></li>
 	</ul>
 </div>
 		
-				
-</div>
-
 
 <script type="text/javascript">
 	var settings = {
@@ -35,14 +30,14 @@
 	};
 	$(function() {
 		Util.init(JSON.stringify(settings));
-
+		
 		$('#buttonBack').click(function() {
 			var data = {
 				'action' : "[onshow..cst.ALL_BACK_VALUE]",
 			};
 			Util.ajaxCall(data);
 		});	
+
+	
 	}); 
-	
-	
 </script>

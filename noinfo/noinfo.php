@@ -4,16 +4,16 @@ session_start();
 
 $Personne = $_SESSION['personne'];
 $tabPersonne=$Personne->getArray();
-$nom = $Personne->getNom();
 
+//Ajouter au fichier ERREUR
 
-
-$pageTitle = QUIZ_TITLE;
-$file = "./../quiz/quiz.html";
-$pageNum = 4;
+$pageTitle = NOINFO_TITLE;
+$file = "./../noinfo/noinfo.html";
+$pageNum = 5;
 $tbs = new clsTinyButStrong;
 $tbs -> LoadTemplate("./../_template/template.htm");
 $tbs -> MergeBlock("tableauPersonne", $tabPersonne);
+
 $tbs -> show();
 
 

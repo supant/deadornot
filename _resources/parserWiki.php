@@ -16,9 +16,12 @@ function parseWiki($idPage,$nom,$requeteOri,$pageTxt) {
     $debutBlock=0;
     $finBlock=0;
     
+    $pResult->setValide(1);
+    
     // Date Naissance
     if ($debutBD === false) {
         $pResult->setErreur("erreur : pas de birth, est-ce vraiment une personne?");
+        $pResult->setValide(0);
         return $pResult;
     }
     
