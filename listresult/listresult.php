@@ -2,8 +2,6 @@
 require_once ("./../_resources/appelAllClasses.php");
 session_start();
 
-
-
 if (!isset($_SESSION['champrecherche']) || empty($_SESSION['champrecherche'])) {
     $requestTxt='';
 } else $requestTxt=$_SESSION['champrecherche'];

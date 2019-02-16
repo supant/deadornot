@@ -1,6 +1,5 @@
 <?php
-define ('NO_REPLY_MAIL',"noreply@ecam.fr");
-define ('CRENEAU_MAIL',"todo@ecam.fr"); //TODO
+define ('NO_REPLY_MAIL',"noreply@site7.org");
 
 // Retour
 define ('RETOUR_OK',1);
@@ -29,10 +28,13 @@ define('PAGE_LISTRESULT',ROOT."listresult/listresult.php");
 define('PAGE_FICHE',ROOT."fiche/fiche.php");
 define('PAGE_QUIZ',ROOT."quiz/quiz.php");
 define('PAGE_NOINFO',ROOT."noinfo/noinfo.php");
-
+define('PAGE_ABOUT',ROOT."about/about.php");
 
 
 define('COLOR_AVAILABLE', "#adadad");
 define('COLOR_SELECTED', "#19c424");
+
+define('FICHIER_OK',"./../ok.txt");
+define('FICHIER_KO',"./../ko.txt");
 
 ?>

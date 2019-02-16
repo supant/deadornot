@@ -5,7 +5,7 @@ session_start();
 $Personne = $_SESSION['personne'];
 $tabPersonne=$Personne->getArray();
 
-//Ajouter au fichier ERREUR
+ecrire(FICHIER_KO,$Personne->getIdPage().';'.$Personne->getNom().';'.$Personne->getRechercheOri().';'.$Personne->getErreur());
 
 $pageTitle = NOINFO_TITLE;
 $file = "./../noinfo/noinfo.html";

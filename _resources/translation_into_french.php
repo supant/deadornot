@@ -12,6 +12,9 @@ define('LISTRESULT_TITRE', "Resultats");
 define('AFFICHEPERSONNE_TITRE',"Personne");
 define('QUIZ_TITLE', "Quiz");
 define('NOINFO_TITLE', "No Info");
+define('FICHE_TITLE', "Fiche");
+define('ABOUT_TITLE', "A propos");
+
 
 
 define('ALL_HOLDER_TXT', "Tapez un nom");

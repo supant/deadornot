@@ -17,6 +17,7 @@ require_once("requetes.php");
 require_once("webAPI.php");
 require_once("parserWiki.php");
 
+require_once("fichiers.php");
 
 
 ?>

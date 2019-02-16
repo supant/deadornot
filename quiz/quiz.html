@@ -2,18 +2,37 @@
 
 
 <div class="12u$">
-	[onshow.nom]
+	<h2> [onshow.nom]</h2>
 </div>
 
-
-		
-<div class="12u$">
-<div class="12u$">
+ <div class="row">
+ 
+<div class="4u">
 	<ul class="actions">
-		<li><input type="button" value="[onshow..cst.MENU_BOUTON_RANDOM_TXT]" id=buttonRandom /></li>
+		<li><input type="button" value="[onshow..cst.QUIZ_BOUTON_LIVE_TXT]" id=buttonVivant /></li>
 	</ul>
 </div>
+
+<div class="4u">
+	<input type="button" value="ou"  />
 </div>
+
+<div class="4u">
+	<ul class="actions">
+		<li><input type="button" value="[onshow..cst.QUIZ_BOUTON_DEAD_TXT]" id=buttonMort /></li>
+	</ul>
+</div>
+
+</div>
+
+<div class="12u$">
+	<ul class="actions">
+		<li><input type="button" value="[onshow..cst.QUIZ_BOUTON_PASSER_TXT]" id=buttonPasser /></li>
+	</ul>
+</div>
+
+
+
 		
 
 <script type="text/javascript">
@@ -26,17 +45,25 @@
 	$(function() {
 		Util.init(JSON.stringify(settings));
 		
-		///Boutons INVITES
-		$('#buttonRepondre').click(function() {
+		$('#buttonMort').click(function() {
 			var data = {
-				'action' : "[onshow..cst.MENU_BOUTON_RECHERCHER_VALUE]",
-				'champrecherche' : $('#champrecherche').val(),
+				'action' : "[onshow..cst.QUIZ_BOUTON_PASSER_VALUE]",
 			};
 			Util.ajaxCall(data);
 		});
-		$('#buttonRandom').click(function() {
+		
+		$('#buttonVivant').click(function() {
 			var data = {
-				'action' : "[onshow..cst.MENU_BOUTON_RANDOM_VALUE]",
+				'action' : "[onshow..cst.QUIZ_BOUTON_PASSER_VALUE]",
+			};
+			Util.ajaxCall(data);
+		});
+		
+		
+		
+		$('#buttonPasser').click(function() {
+			var data = {
+				'action' : "[onshow..cst.QUIZ_BOUTON_PASSER_VALUE]",
 			};
 			Util.ajaxCall(data);
 		});

@@ -8,22 +8,10 @@
 		$subject=SUJET_MAIL;
 		$headers  = 'MIME-Version: 1.0' . "\r\n";
      	$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-		$headers .= 'From:noreply@ecam.fr';
+		$headers .= 'From:noreply@site7.org';
 		
 		
-		$tabCreneaux=getUnCreneau(TYPE_OBJET_PLACE,$idCreneau);
-		$nomCreneau=constant($tabCreneaux[0]['sNom']);
-		
-		$tableauInfoMail=getInfoForMail($idResa);
-		$line=$tableauInfoMail[0];
-		$jour=$line[0];
-		$iNumeroPlace=$line[1];
-		$jourFrench = DateTime::createFromFormat('Y-m-d', $jour);
-		$jourFrench = $jourFrench -> format('d/m/Y');
-		
-		
-		$messageHTML = sprintf(MESSAGE_MAIL, $sPrenomUser, $jourFrench, $nomCreneau, $iNumeroPlace, $iNumeroPlace);
-		$messageMail=$messageHTML.SIGNATURE_MAIL;
+		$messageMail='';
 
 		mail($to,$subject,$messageMail,$headers);
 		return $messageHTML;

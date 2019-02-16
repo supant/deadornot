@@ -3,7 +3,7 @@
 define('DB_HOST', '172.26.0.113');
 define('DB_DATABASE', 'ats_18');
 define('DB_USER', 'ats_18');
-define('DB_PASSWORD', 'OLuve10');
+define('DB_PASSWORD', '');
 
 define('API_WIKI','https://en.wikipedia.org/w/');
 define('API_NB_RESULT',20);
