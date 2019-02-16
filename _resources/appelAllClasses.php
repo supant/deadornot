@@ -1,4 +1,9 @@
 <?php
+//Erreur
+//error_reporting(E_ALL);
+//ini_set('display_errors', '1');
+
+
 //Externe
 require_once("library/tbs_class.php");
 //BDD
@@ -18,6 +23,8 @@ require_once("webAPI.php");
 require_once("parserWiki.php");
 
 require_once("fichiers.php");
+
+
 
 
 ?>
