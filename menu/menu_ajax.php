@@ -19,9 +19,28 @@ if ($_POST['action'] == ALL_RECHERCHER_VALUE) {
             echo(json_encode(array(RETOUR_OK, PAGE_MENU)));
         } else {
             $_SESSION['champrecherche']=$_POST['champrecherche'];
-            echo(json_encode(array(RETOUR_OK, PAGE_LISTRESULT)));
+            if (!isset($_POST['idrecherche']) || empty($_POST['idrecherche']) || $_POST['idrecherche']==0) {
+                    //rechereListe
+                    echo(json_encode(array(RETOUR_OK, PAGE_LISTRESULT)));
+                } else {//recherche personne
+                    $_SESSION['cptRecherche']+=1;
+                    $idrechercheTmp=$_POST['idrecherche'];
+                    if (!isset($_POST['champrecherche']))  $champrechercheTmp ='';
+                    else $champrechercheTmp =$_POST['champrecherche'];
+                    if (!isset($_POST['txtrecherche']))  $txtrechercheTmp='';
+                    else $txtrechercheTmp=$_POST['txtrecherche'];
+                    
+                    $Personne=chercherPersonneFromID($idrechercheTmp,$txtrechercheTmp,$champrechercheTmp);
+                    $_SESSION['personne']=$Personne;
+                    if ($Personne->isValide()==1)
+                        echo(json_encode(array(RETOUR_OK, PAGE_QUIZ)));
+                        else echo(json_encode(array(RETOUR_OK, PAGE_NOINFO)));
+                        
+                }
         }
+             
    }
+   
 if ($_POST['action'] == MENU_BOUTON_RANDOM_VALUE) {
         echo(json_encode(array(RETOUR_OK, PAGE_MENU)));
         

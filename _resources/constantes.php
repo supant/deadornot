@@ -35,12 +35,18 @@ define('COLOR_SELECTED', "#19c424");
 
 define('FICHIER_OK',"./../ok.txt");
 define('FICHIER_KO',"./../ko.txt");
+define('FICHIER_ERREUR',"./../erreur.txt");
 
 define('NBCARACTCHERCHE',4);
 
 define('MAX_CPTRECHERCHE',10);
 define('MAX_TEMPS',60); // en seconde
 define('MAX_CPTLISTE',50); // 5 Liste pour 1 recherche
+
+define('CHERCHEPERSONNE',1);
+define('CHERCHELISTE',2);
+
+
 
 
 ?>

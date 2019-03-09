@@ -21,6 +21,7 @@ if (isset($_SESSION['cptListe'])) {
     $messageB.=$_SESSION['cptListe'];
 }
 
+ecrire($nom,$messageA.';'.$messageB);
 $pageTitle = ERREUR_TITLE;
 $file = "./../erreur/erreur.html";
 $pageNum = 1;
