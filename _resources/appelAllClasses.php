@@ -23,7 +23,7 @@ require_once("webAPI.php");
 require_once("parserWiki.php");
 
 require_once("fichiers.php");
-
+require_once("gestionMaxConnexion.php");
 
 
 

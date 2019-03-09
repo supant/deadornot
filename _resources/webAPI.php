@@ -27,9 +27,8 @@ function chercherPersonneFromID($idrechercheTmp,$txtrechercheTmp,$champrecherche
 }
 
 function chercherListeFromTxt($requestTxt) {
-    if ($requestTxt=='') {
-        $tableauResult=array();
-    } else {
+    $tableauResult=array();
+    if ($requestTxt!='') {
         $requestApiWiki=API_WIKI.'api.php?action=query&format=json&list=search&srnamespace=0&srlimit='.API_NB_RESULT.'&srsearch='.$requestTxt;
         $response = file_get_contents($requestApiWiki);
         //$response = file_get_contents('./api-result.json');
@@ -46,7 +45,7 @@ function chercherListeFromTxt($requestTxt) {
                     $cpt++;
                 }
             }  
-        } else $tableauResult=array();
+        } 
     }
     return $tableauResult;
 }

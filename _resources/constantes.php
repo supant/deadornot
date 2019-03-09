@@ -19,21 +19,28 @@ define('DATE_HTML_T_SEC',"Y-m-d\TH:i:s");
 
 
 //define('ROOT',"/EclipsePhpWorkSpace/deadornot/"); //Antoine boulot
-//define('ROOT',"/WorkspaceEclipsePhp/deadornot/"); //Antoine maison
+define('ROOT',"/WorkspaceEclipsePhp/deadornot/"); //Antoine maison
 //define('ROOT',"/deadornot/"); //Arthur
-define('ROOT',"/dond/"); //production
+//define('ROOT',"/dond/"); //production
 define('PAGE_MENU',ROOT."menu/menu.php");
 define('PAGE_LISTRESULT',ROOT."listresult/listresult.php");
 define('PAGE_FICHE',ROOT."fiche/fiche.php");
 define('PAGE_QUIZ',ROOT."quiz/quiz.php");
 define('PAGE_NOINFO',ROOT."noinfo/noinfo.php");
 define('PAGE_ABOUT',ROOT."about/about.php");
-
+define('PAGE_ERREUR',ROOT."erreur/erreur.php");
 
 define('COLOR_AVAILABLE', "#adadad");
 define('COLOR_SELECTED', "#19c424");
 
 define('FICHIER_OK',"./../ok.txt");
 define('FICHIER_KO',"./../ko.txt");
+
+define('NBCARACTCHERCHE',4);
+
+define('MAX_CPTRECHERCHE',10);
+define('MAX_TEMPS',60); // en seconde
+define('MAX_CPTLISTE',50); // 5 Liste pour 1 recherche
+
 
 ?>

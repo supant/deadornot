@@ -14,6 +14,7 @@ define('QUIZ_TITLE', "Quiz");
 define('NOINFO_TITLE', "No Info");
 define('FICHE_TITLE', "Fiche");
 define('ABOUT_TITLE', "A propos");
+define('ERREUR_TITLE', "Erreur");
 
 
 
@@ -42,7 +43,9 @@ define('QUIZ_BOUTON_PASSER_TXT', "Passer");
 
 //Erreur
 define('ERREUR_NORESULT', "3301"); //webAPI $responseJson-> est null
- 
+define('ERREUR_TOOMANYCONNEXION', "3302"); 
+define('ERREUR_NOGESTIONCONNEXION', "3303"); 
+define('ERREUR_NOERREURMESSAGE', "3304"); 
 
 
 
