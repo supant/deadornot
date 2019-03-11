@@ -3,10 +3,7 @@
 
 <div class="12u$">
 	<ul class="actions">
-		<li><input type="text" id="champrecherche" value="" placeholder="[onload..cst.ALL_HOLDER_TXT]" list="mesSuggestion" />
-		<datalist id="mesSuggestion">
-    	</datalist>
-		</li>
+		<li><input type="text" id="champrecherche" value="" placeholder="[onload..cst.ALL_HOLDER_TXT]"/></li>
 		<li><input type="button" value="[onshow..cst.ALL_RECHERCHER_TXT]" id=buttonRepondre /></li>
 	</ul>
 </div>
@@ -48,7 +45,7 @@
 		
 		///Boutons INVITES
 		$('#buttonRepondre').click(function() {
-			callRechercher();
+			callRechercher(0);
 		});
 		$('#buttonRandom').click(function() {
 			var data = {
@@ -56,34 +53,25 @@
 			};
 			Util.ajaxCall(data);
 		});
-		$('#champrecherche').keyup(function(e) {
-			if(e.which != 13) {
-				if ($('#champrecherche').val().length>[onshow..cst.NBCARACTCHERCHE] ) {
-					//lancer ajax recherche
-					$.post(
-						    'menu_list_ajax.php',
-						    {
-						    	champrecherche : $('#champrecherche').val(), 
-						    },
-						    retourAjax, 
-						    'text' // Format des données reçues.
-						);
-				}
-			}
+		//https://www.devbridge.com/sourcery/components/jquery-autocomplete/#
+		$('#champrecherche').autocomplete({
+		    serviceUrl: 'menu_list_ajax.php',
+		    type : 'POST',
+		    params : {
+		    	champrecherche : $('#champrecherche').val()
+		    },
+		    onSelect: function (suggestion) {
+		        callRechercher(suggestion.data);
+		    }
 		});
+		
 		$(document).keypress(function(e) {
 			  if(e.which == 13) { //enter
-				  callRechercher();
+				  callRechercher(0);
 			  }
 		});
 		
-		function callRechercher() {
-			var valueId = 0;
-			$(".suggestionOption").each(function () {
-				if ($(this).attr('value')==$('#champrecherche').val()) {
-					valueId=$(this).attr('idr');
-				}	
-			});
+		function callRechercher(valueId) {
 			var data = {
 					'action' : "[onshow..cst.ALL_RECHERCHER_VALUE]",
 					'champrecherche' : $('#champrecherche').val(),
@@ -92,12 +80,7 @@
 			};
 			Util.ajaxCall(data);
 		}
-		function retourAjax(texte_recu){
-		    //alert(texte_recu);
-		    //$("#mesSuggestion").text(texte_recu);
-		   $("#mesSuggestion").empty().append(texte_recu);
-		   $("#champrecherche").focus();
-		}
+		
 		
 		
 	}); 
