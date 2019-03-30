@@ -5,25 +5,21 @@
 	<h2> [onshow.nom]</h2>
 </div>
 
-<div class="row">
+
  
-	<div class="5u">
+	<div class="12u$">
 		<ul class="actions">
 			<li><input type="button" value="[onshow..cst.QUIZ_BOUTON_LIVE_TXT]" id=buttonVivant /></li>
 		</ul>
 	</div>
 	
-	<div class="2u">
-		<input type="button" value="ou"  />
-	</div>
-	
-	<div class="5u">
+		
+	<div class="12u$">
 		<ul class="actions">
 			<li><input type="button" value="[onshow..cst.QUIZ_BOUTON_DEAD_TXT]" id=buttonMort /></li>
 		</ul>
 	</div>
 
-</div>
 
 <div class="12u$">
 	<ul class="actions">
@@ -31,43 +27,65 @@
 	</ul>
 </div>
 
+<div id="modal_response" class="modal">
+	<div class="modal-content">
+		<span class="close">&times;</span>
+	    <span id="modal_txt"></span>
+	</div>
 
-
-		
+</div>
 
 <script type="text/javascript">
+
+var modalBR = document.getElementById('modal_response');
+modalBR.style.display = "none";
+
+
 	var settings = {
 		'page' : '[onshow..script_name]',
 		'codeError' : '[onshow..cst.RETOUR_ERREUR]',
 		'codeAlert' : '[onshow..cst.RETOUR_ALERT]',
 		'pageError' : '[onshow..cst.PAGE_ERREUR]'
 	};
+	
 	$(function() {
-		Util.init(JSON.stringify(settings));
+		
+		
+		$('#modal_response').click(function() {
+			var modalBR = document.getElementById('modal_response');
+			modalBR.style.display = "none";
+		});
 		
 		$('#buttonMort').click(function() {
-			var data = {
-				'action' : "[onshow..cst.QUIZ_BOUTON_PASSER_VALUE]",
-			};
-			Util.ajaxCall(data);
+			popupresultat(1);
 		});
 		
 		$('#buttonVivant').click(function() {
-			var data = {
-				'action' : "[onshow..cst.QUIZ_BOUTON_PASSER_VALUE]",
-			};
-			Util.ajaxCall(data);
-		});
-		
-		
-		
-		$('#buttonPasser').click(function() {
-			var data = {
-				'action' : "[onshow..cst.QUIZ_BOUTON_PASSER_VALUE]",
-			};
-			Util.ajaxCall(data);
+			popupresultat(0);
 		});
 
+		$('#buttonPasser').click(function() {
+			goFiche();
+		});
 	
 	}); 
+		
+	function popupresultat(reponse) {
+		if(reponse==[onshow.estmort]) {
+			$('#modal_txt').html("bonne reponse");
+		} else {
+			$('#modal_txt').html("mauvaise reponse");
+		}
+		var modalBR = document.getElementById('modal_response');
+		modalBR.style.display = "block";
+	}
+	
+	function goFiche() {
+		Util.init(JSON.stringify(settings));
+		var data = {
+				'action' : "[onshow..cst.QUIZ_BOUTON_PASSER_VALUE]",
+			};
+			Util.ajaxCall(data);
+	}
+	
 </script>

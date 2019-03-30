@@ -6,6 +6,7 @@ function chercherPersonneFromID($idrechercheTmp,$txtrechercheTmp,$champrecherche
     $response = file_get_contents($requestApiWiki);
     //$response = file_get_contents('./api-result.json');
     $responseJson = json_decode($response);
+    //print_r($requestApiWiki);dfgdfg();
     
     $resultats=$responseJson->{'query'}->{'export'}->{'*'};
     if (!empty($resultats)) {
@@ -31,7 +32,7 @@ function chercherListeFromTxt($requestTxt) {
     if ($requestTxt!='') {
         //$new = str_replace(' ', '%20', $your_string);
         //$url.rawurlencode(basename($image))
-        $requestTxt=$url.rawurlencode(basename($requestTxt));
+        $requestTxt=rawurlencode(basename($requestTxt));
         $requestApiWiki=API_WIKI.'api.php?action=query&format=json&list=search&srnamespace=0&srlimit='.API_NB_RESULT.'&srsearch='.$requestTxt;
         $response = file_get_contents($requestApiWiki);
         //$response = file_get_contents('./api-result.json');

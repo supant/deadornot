@@ -2,19 +2,16 @@
 <div class="inner">
 
 
-<div class="12u$">
-	<ul class="actions">
-		<li><input type="text" id="champrecherche" value="[onshow.requestTxt]" placeholder="[onload..cst.ALL_SEARCH_HOLDER_TXT]" /></li>
-		<li><input type="button" value="[onshow..cst.ALL_RECHERCHER_TXT]" id=buttonRepondre /></li>
-	</ul>
-</div>
-
 <div class="table-wrapper">
 	<table class="alt">
 		<tr>
 		<td id="[tableauResult.pageid;block=tr]"> [tableauResult.title]</td>
 		</tr>
 	</table>
+</div>
+
+<div class="12u$" [onload;block=div;when [var.noresult]=1]>
+[onshow..cst.LISTRESULT_NO_RESULT_TXT]
 </div>
 		
 <div class="12u$">
@@ -36,13 +33,7 @@
 	};
 	$(function() {
 		Util.init(JSON.stringify(settings));
-		$('#buttonRepondre').click(function() {
-			var data = {
-				'action' : "[onshow..cst.ALL_RECHERCHER_VALUE]",
-				'champrecherche' : $('#champrecherche').val(),
-			};
-			Util.ajaxCall(data);
-		});
+		
 		$('#buttonBack').click(function() {
 			var data = {
 				'action' : "[onshow..cst.ALL_BACK_VALUE]",

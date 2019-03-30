@@ -4,6 +4,7 @@ function parseWiki($idPage,$nom,$requeteOri,$pageTxt) {
     $pResult->setIdPage($idPage);
     $pResult->setNom($nom);
     $pResult->setRechercheOri($requeteOri);
+   
     if (strlen($pageTxt)<1) {
         $pResult->setErreur("erreur : y'a rien à parser");
         return $pResult;
@@ -15,7 +16,7 @@ function parseWiki($idPage,$nom,$requeteOri,$pageTxt) {
     $debutDP =strPos($pageTxt,"death_place");
     $debutBlock=0;
     $finBlock=0;
-    
+       
     $pResult->setValide(1);
     
     // Date Naissance
@@ -24,7 +25,6 @@ function parseWiki($idPage,$nom,$requeteOri,$pageTxt) {
         $pResult->setValide(0);
         return $pResult;
     }
-    
     $debutBlock=rechercheDebutDoubleAccoladeOuPipe($debutBD,$pageTxt);
     if ($debutBlock === false) {
         $pResult->setErreur("erreur : pas de debut accolade block Birth");
@@ -57,7 +57,7 @@ function parseWiki($idPage,$nom,$requeteOri,$pageTxt) {
         return $pResult;
     }
     $finBlock=rechercheFinDoubleAccolade($debutBlock,$pageTxt);
-    if ($finBlock>-1) {
+    if ($finBlock === false) {
         $pResult->setErreur("erreur : pas de fin de block death !!");
         $pResult->setIsMort(0);
         return $pResult;
@@ -72,7 +72,7 @@ function parseWiki($idPage,$nom,$requeteOri,$pageTxt) {
         $pResult->setIsMort(1);
         $pResult->calculAge();
     }
-   
+    return $pResult;
     
 }
    

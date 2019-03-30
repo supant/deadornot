@@ -30,6 +30,7 @@ define('MENU_TABLE_TITLE_POPULAIRE',"Les + populaires");
 
 
 define('LISTRESULT_BOUTON_PERSONNE_VALUE', 3);
+define('LISTRESULT_NO_RESULT_TXT', "Aucun resultat");
 
 
 
@@ -38,7 +39,7 @@ define('QUIZ_BOUTON_LIVE_TXT', "VIVANT");
 define('QUIZ_BOUTON_DEAD_VALUE', "3");
 define('QUIZ_BOUTON_DEAD_TXT', "MORT");
 define('QUIZ_BOUTON_PASSER_VALUE', "4");
-define('QUIZ_BOUTON_PASSER_TXT', "Passer");
+define('QUIZ_BOUTON_PASSER_TXT', "Voir la fiche");
 
 
 //Erreur

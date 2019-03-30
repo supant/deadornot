@@ -5,6 +5,7 @@ session_start();
 $Personne = $_SESSION['personne'];
 $tabPersonne=$Personne->getArray();
 $nom = $Personne->getNom();
+if ($Personne->getIsMort()==1) $estmort = 1; else $estmort = 0;
 
 
 

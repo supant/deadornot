@@ -20,7 +20,11 @@ if (!isset($_SESSION['champrecherche']) || empty($_SESSION['champrecherche'])) {
 unset($_SESSION['champrecherche']);
 
 $tableauResult=chercherListeFromTxt($requestTxt);
-if ($tableauResult==null) $tableauResult=array();
+$noresult=0;
+if ($tableauResult==null) { 
+    $tableauResult=array();
+    $noresult=1;
+}
 
 $pageTitle = LISTRESULT_TITRE;
 $file = "./../listresult/listresult.html";

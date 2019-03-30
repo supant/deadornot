@@ -93,7 +93,7 @@ class Personne {
 	}
 	
 	public function getIsMort() {
-	    return $this -> photo;
+	    return $this -> isMort;
 	}
 	public function setIsMort($isMort) {
 	    $this -> isMort = $isMort;

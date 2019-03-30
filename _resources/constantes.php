@@ -19,7 +19,7 @@ define('DATE_HTML_T_SEC',"Y-m-d\TH:i:s");
 
 
 //define('ROOT',"/EclipsePhpWorkSpace/deadornot/"); //Antoine boulot
-define('ROOT',"/WorkspaceEclipsePhp/deadornot/"); //Antoine maison
+//define('ROOT',"/WorkspaceEclipsePhp/deadornot/"); //Antoine maison
 //define('ROOT',"/deadornot/"); //Arthur
 //define('ROOT',"/dond/"); //production
 define('PAGE_MENU',ROOT."menu/menu.php");
