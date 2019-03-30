@@ -1,13 +1,12 @@
-<<<<<<< HEAD
 
 * {box-sizing: border-box;}
-<!-- Page menu -->
+/* Page Quiz Modal */
 
 .search-container input[type=text] {
   padding: 6px;
   margin-top: 8px;
   font-size: 25px;
-  border: solid #5B6DCD 10px;
+  border: solid #5B6DCD 2px;
 }
 
 .search-container .icon {
@@ -25,7 +24,7 @@
   background: #eee;
 }
 
-<!-- Page Quiz Modal -->
+/* Page Quiz Modal */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -61,15 +60,18 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
-=======
+}
+
+/* Page Quiz Modal */
+
 .autocomplete-suggestion {
-	background:red;
+	background:white;
 	padding: 5px;
 	margin : 2px 0;
-	border-radius:3px;
+	border-radius:1px;
 }
+
 .autocomplete-suggestion:hover{
-	background:green;
+	background:#51b6d9;;
 	color:white
->>>>>>> branch 'master' of https://github.com/supant/deadornot
 }

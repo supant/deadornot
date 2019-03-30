@@ -30,11 +30,6 @@ function chercherPersonneFromID($idrechercheTmp,$txtrechercheTmp,$champrecherche
 function chercherListeFromTxt($requestTxt) {
     $tableauResult=array();
     if ($requestTxt!='') {
-<<<<<<< HEAD
-        //$new = str_replace(' ', '%20', $your_string);
-        //$url.rawurlencode(basename($image))
-=======
->>>>>>> branch 'master' of https://github.com/supant/deadornot
         $requestTxt=rawurlencode(basename($requestTxt));
         $requestApiWiki=API_WIKI.'api.php?action=query&format=json&list=search&srnamespace=0&srlimit='.API_NB_RESULT.'&srsearch='.$requestTxt;
         $response = file_get_contents($requestApiWiki);

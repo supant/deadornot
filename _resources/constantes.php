@@ -18,12 +18,8 @@ define('DATE_HTML_T',"Y-m-d\TH:i");
 define('DATE_HTML_T_SEC',"Y-m-d\TH:i:s");
 
 
-<<<<<<< HEAD
 //define('ROOT',"/EclipsePhpWorkSpace/deadornot/"); //Antoine boulot
-=======
-define('ROOT',"/EclipsePhpWorkSpace/deadornot/"); //Antoine boulot
->>>>>>> branch 'master' of https://github.com/supant/deadornot
-//define('ROOT',"/WorkspaceEclipsePhp/deadornot/"); //Antoine maison
+define('ROOT',"/WorkspaceEclipsePhp/deadornot/"); //Antoine maison
 //define('ROOT',"/deadornot/"); //Arthur
 //define('ROOT',"/dond/"); //production
 define('PAGE_MENU',ROOT."menu/menu.php");
