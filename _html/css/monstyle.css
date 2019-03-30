@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 * {box-sizing: border-box;}
 <!-- Page menu -->
@@ -60,4 +61,15 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+=======
+.autocomplete-suggestion {
+	background:red;
+	padding: 5px;
+	margin : 2px 0;
+	border-radius:3px;
+}
+.autocomplete-suggestion:hover{
+	background:green;
+	color:white
+>>>>>>> branch 'master' of https://github.com/supant/deadornot
 }
